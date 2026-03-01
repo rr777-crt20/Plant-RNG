@@ -1,0 +1,23 @@
+/*цвета для текста*/
+.green{
+    color:rgb(0, 241, 0);
+}
+.gray{
+    color:gray;
+}
+.blue{
+    color:blue
+}
+/*сама игра*/
+.body{
+    background: black;
+}
+#info-sun{
+    color:white
+}
+#main-button{
+    border-radius: 40%;
+    background: rgb(0, 255, 13);
+    width:125px;
+    height: 25px;
+}
