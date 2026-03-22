@@ -25,6 +25,17 @@
 .black {
     color: rgb(0, 0, 0);
 }
+.pink{
+    color:rgb(255, 0, 53);
+
+}
+.purple{
+    color:purple;
+}
+.lime{
+    color:lime
+}
+
 
 /* сама игра */
 .body {
@@ -180,4 +191,32 @@ body.body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#openshop {
+    border-radius: 20%;
+    font-size: 60px;
+ background: rgb(255, 247, 0);
+    color: rgb(0, 241, 0);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+#shop-container{
+    position: absolute;
+    left: calc(50vw - 300px);
+    top: calc(50vh - 200px);
+    width: 600px;
+    height: 400px;
+    background-image: url('./images/0000008156.1920x1080.webp');
+    border-radius: 20px;
+    transform: scale(0);
+    transition: transform 0.3s;
+    overflow-y: auto;
+}
+.shop-open {
+    transform: scale(1);
+}
+#obm{
+    background-color: aqua;
+    font-size: 40px;
 }
