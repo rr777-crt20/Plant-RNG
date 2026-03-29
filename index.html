@@ -7,45 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-    <!-- Валюта в самом верху -->
     <div class="sun-img">
         <h1 id="info-sun">0</h1>
     </div>
-    <h5 id = "efi">ЭФИР:</h5>
+    <h5 id="efi"><img src=".images/EFIR.png"> 0</h5>
     
-    <!-- Кнопка в body -->
-    <button id="main-button"></button>
+    <button id="main-button">B</button>
     
-    <!-- Результат в body -->
     <div id="result">
-        <p id="result-text">void*</p>
+        <p id="result-text">горохострел</p>
         <img src="" id="img" alt="результат">
     </div>
 
-    <div id ="openshop">МАГАЗИН</div>
+    <div id="openshop">МАГАЗИН</div>
+    
     <div id="shop-container">
-<button id = "obm" obmen(100,10)>10 солнц</button>
+        <div class="close-shop" id="closeShop">X</div>
+        <h2 class="shop-title">МАГАЗИН</h2>
+                    <h1 id="info-sun">0</h1>
+        <div class="shop-buttons">
+
+            <div class="shop-item">
+                <div class="item-gives">+1 <img src="./images/EFIR.png" class="efir-icon"> за переработку</div>
+                <button onclick="obmen(10,1)">10 <img src="./images/Sun.webp" class="sun-icon"></button>
+                <div class="item-gives">+5 <img src="./images/EFIR.png" class="efir-icon"> за переработку</div>
+                <button onclick="obmen(40,5)">40 <img src="./images/Sun.webp" class="sun-icon"></button>
+                <div class="item-gives">+18 <img src="./images/EFIR.png" class="efir-icon"> за переработку</div>
+                <button onclick="obmen(100,18)">100 <img src="./images/Sun.webp" class="sun-icon"></button>
+            </div>
+          
+        </div>
     </div>
     
-    <!-- Дополнительная информация -->
-    <p id="info-exp"></p>
-    <p id="info-dostup-click"></p>
+    <p id="info-exp">Опыт: 0</p>
+    <p id="info-dostup-click">очки: 0</p>
+    
     <footer>
-
-<button id="ToNot">ПЕРЕРАБОТКА В ЭФИРА
-    <span>клик = эфир</span>
-</button>
-<button id="ToSun"> ПЕРЕРАБОТКА В СОЛНЦЫ
-    <span>5 эфира = 1 солнце</span>
-</button>
-
-
-
-
-
-
+        <button id="ToNot">В ЭФИР
+            <span>1 очко = 1 эфир</span>
+        </button>
+        <button id="ToSun">В СОЛНЦЫ
+            <span>5 эфира = 1 солнце</span>
+        </button>
     </footer>
-    <script src="game.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>
-
