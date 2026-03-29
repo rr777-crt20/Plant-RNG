@@ -1,79 +1,51 @@
-/* цвета для текста */
-.green {
-    color: rgb(0, 241, 0);
+/*ЦВЕТА*/
+.green { color: rgb(0, 241, 0); }
+.gray { color: gray; }
+.blue { color: blue; }
+.red { color: rgb(255, 0, 0); }
+.lightgreen { color: rgb(178, 255, 90); }
+.green2 { color: rgb(10, 129, 8); }
+.blue2 { color: rgb(104, 210, 255); }
+.black { color: rgb(0, 0, 0); }
+.pink { color: rgb(255, 0, 53) !important; }
+.purple { color: purple; }
+.lime { color: lime; }
+/*АНИМАЦИЙ*/
+.UsePink{animation: A1 3.4s;}
+
+@keyframes A1{
+    0% {background:rgb(255, 135, 155)};
+    10%{background:rgb(255, 0, 43)};
+   30% {background:rgb(197, 135, 255)};
+    40%{background:rgb(135, 255, 199)};
+   80% {background:rgb(0, 255, 0)};
+    100%{background:rgb(123, 255, 0)};
 }
 
-.gray {
-    color: gray;
-}
-
-.blue {
-    color: blue;
-}
-.red{
-    color: rgb(255, 0, 0);
-}
-.lightgreen {
-    color: rgb(178, 255, 90);
-}
-.green2 {
-    color: rgb(10, 129, 8);
-}
-.blue2 {
-    color: rgb(104, 210, 255);
-}
-.black {
-    color: rgb(0, 0, 0);
-}
-.pink{
-    color:rgb(255, 0, 53);
-
-}
-.purple{
-    color:purple;
-}
-.lime{
-    color:lime
-}
-
-
-/* сама игра */
+/*ИГРА*/
 .body {
     min-height: 100vh;
-    
-    /* Радиальный градиент от центра */
-    background: radial-gradient(
-        circle at center,    /* Круг от центра */
-        #8a2be2,             /* Фиолетовый в центре */
-        #4b0082,             /* Индиго (промежуточный) */
-        #000000              /* Черный по краям */
-    );
-    
+    background: radial-gradient(circle at center, #8a2be2, #4b0082, #000000);
     margin: 0;
     font-family: Arial, sans-serif;
     color: white;
-    
-    /* Добавим отступы для красоты */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
 }
 
-/* Валюта сверху */
 .sun-img {
     background-image: url('./images/Sun.webp');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 150px;  /* Уменьшил размер */
+    width: 150px;
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;  /* Центрируем */
-    position: relative;
-    top: 0;  /* Будет вверху */
+    margin: 20px auto;
 }
 
 #info-sun {
@@ -81,142 +53,251 @@
     font-size: 2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin: 0;
-    z-index: 1;
 }
 
-/* Кнопка */
-#main-button{
-    border-radius: 50%;  /* Делаем круглой */
+#efi {
+    font-size: 1.2em;
+    margin: 5px;
+}
+
+#main-button {
+    border-radius: 50%;
     background: rgb(0, 255, 13);
     width: 125px;
-    height: 125px;  /* Сделал квадратной для идеального круга */
+    height: 125px;
     border: none;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: bold;
     margin: 20px auto;
     display: block;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#ToNot{
-    border-radius: 20%;  /* Делаем круглой */
-    background: rgb(0, 255, 13);
-    width: 245px;
-    height: 75px;  /* Сделал квадратной для идеального круга */
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 20px auto;
-    display: block;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-#ToSun{
-    border-radius: 20%;  /* Делаем круглой */
-    background: rgb(0, 255, 13);
-    width: 245px;
-    height: 75px;  /* Сделал квадратной для идеального круга */
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 20px auto;
-    display: block;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
 #main-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 255, 13, 0.5);
 }
 
-/* Результат */
+#ToNot, #ToSun {
+    border-radius: 20px;
+    background: rgb(0, 255, 13);
+    width: 200px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#ToNot span, #ToSun span {
+    display: block;
+    font-size: 11px;
+}
+
+footer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #result {
     text-align: center;
     margin: 20px auto;
     padding: 20px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    min-width: 300px;
+    min-width: 280px;
 }
 
 #result-text {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Стили для разных классов результата */
-#result-text.green {
-    background: rgba(0, 255, 0, 0.2);
-    color: rgb(0, 241, 0);
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-#result-text.gray {
-    background: rgba(128, 128, 128, 0.2);
-    color: gray;
-}
-
-#result-text.blue {
-    background: rgba(0, 0, 255, 0.2);
-    color: blue;
-}
-
-/* Изображение результата */
 #img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 150px;
+    max-height: 150px;
     border-radius: 10px;
-    margin-top: 10px;
     border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Информационные поля */
 #info-exp, #info-dostup-click {
-    text-align: center;
-    font-size: 1.2em;
-    margin: 10px auto;
-    padding: 8px 20px;
+    font-size: 1.1em;
+    margin: 5px auto;
+    padding: 5px 15px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    display: inline-block;
-}
-
-/* Центрируем информацию */
-body.body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #openshop {
-    border-radius: 20%;
-    font-size: 60px;
- background: rgb(255, 247, 0);
+    border-radius: 30px;
+    font-size: 35px;
+    background: rgb(255, 247, 0);
     color: rgb(0, 241, 0);
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    cursor: pointer;
+    padding: 8px 25px;
+    margin: 15px;
+    font-weight: bold;
 }
 
-#shop-container{
-    position: absolute;
-    left: calc(50vw - 300px);
-    top: calc(50vh - 200px);
-    width: 600px;
-    height: 400px;
-    background-image: url('./images/0000008156.1920x1080.webp');
-    border-radius: 20px;
+/* МАГАЗИН ПО ЦЕНТРУ */
+#shop-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     transform: scale(0);
-    transition: transform 0.3s;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/0000008156.1920x1080.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
     overflow-y: auto;
+    z-index: 1000;
+    padding: 50px 20px 20px 20px;
+    box-sizing: border-box;
 }
-.shop-open {
-    transform: scale(1);
+
+/* Прокрутка */
+#shop-container::-webkit-scrollbar {
+    width: 10px;
 }
-#obm{
-    background-color: aqua;
-    font-size: 40px;
+
+#shop-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+#shop-container::-webkit-scrollbar-thumb {
+    background: #00aaff;
+    border-radius: 10px;
+}
+
+/* Кнопка закрытия */
+.close-shop {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 1001;
+}
+
+.close-shop:hover {
+    background: red;
+    transform: scale(1.1);
+}
+
+/* Заголовок */
+.shop-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+/* Контейнер кнопок - как в PvZ */
+.shop-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* БЛОКИ как в PvZ */
+.shop-item {
+    background: rgba(30, 144, 255, 0.85);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.shop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: gold;
+}
+
+/* Что даёт (вверху блока) */
+.item-gives {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffaa;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Кнопка с ценой */
+.shop-item button {
+    background: linear-gradient(135deg, #0066aa, #003366);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.shop-item button:hover {
+    background: linear-gradient(135deg, #0088cc, #004488);
+    transform: scale(1.02);
+}
+
+/* Иконки */
+.efir-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.sun-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
 }
